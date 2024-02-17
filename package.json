@@ -4,13 +4,27 @@
   "private": true,
   "main": "index.js",
   "packageManager": "pnpm@8.15.3",
+  "type": "module",
   "scripts": {
-    "build": "npm install && tsc -p tsconfig.json && webflow extension bundle",
-    "dev": "npm install && concurrently -r \"webflow extension serve\" \"tsc -p tsconfig.json --watch --preserveWatchOutput\""
+    "build": "pnpm install && vite build && webflow extension bundle",
+    "dev": "pnpm install && concurrently -r \"webflow extension serve\" \"vite build --watch\""
   },
   "devDependencies": {
-    "@webflow/designer-extension-typings": "*",
-    "concurrently": "*",
-    "typescript": "*"
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@webflow/designer-extension-typings": "^0.1.12",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
